@@ -62,3 +62,8 @@ tr {
 .card {
   width: 18rem;
 }
+
+.card-Img {
+  width: 300px;
+  height: 270px;
+}
