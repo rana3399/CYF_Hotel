@@ -1,4 +1,5 @@
 import React from "react";
+import SearchButton from "./SearchButton.js";
 
 const Search = () => {
   return (
@@ -17,7 +18,7 @@ const Search = () => {
                 className="form-control"
                 placeholder="Customer name"
               />
-              <SearchBTN />
+              <SearchButton />
             </div>
           </form>
         </div>
@@ -26,8 +27,7 @@ const Search = () => {
   );
 };
 
-const SearchBTN = () => {
-  return <button className="btn btn-primary">Search</button>;
-};
-
+// const SearchBTN = () => {
+//   return <button className="btn btn-primary">Search</button>;
+// };
 export default Search;

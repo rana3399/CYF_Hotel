@@ -3,13 +3,17 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 60px;
+}
+
+.logo-img {
+  height: 50px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
+  background-color: rgb(28, 27, 27);
+  height: 100px;
   padding: 20px;
   color: white;
   text-align: left;
@@ -19,10 +23,9 @@
 }
 
 .Header-Img {
-  width: 50px;
-  height: 40px;
+  width: 350px;
+  height: 220px;
   margin: 7px;
-  opacity: 0.5;
 }
 
 .App-title {
@@ -59,8 +62,17 @@ tr {
   text-align: center;
 }
 
+.cards-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .card {
-  width: 18rem;
+  width: 25rem;
+  margin: 1rem;
 }
 
 .card-Img {
