@@ -2,7 +2,8 @@ import React from "react";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/footer.js";
-import SearchResults from "./components/SearchResults";
+//import SearchResults from "./components/SearchResults";
+import Restaurant from "./components/Restaurant";
 
 import Bookings from "./components/Bookings";
 import "./App.css";
@@ -13,8 +14,8 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer />
-      {/* <SearchResults /> */}
     </div>
   );
 };
