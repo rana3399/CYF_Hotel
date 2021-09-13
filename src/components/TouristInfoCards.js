@@ -7,7 +7,7 @@ const TouristInfoCard = props => (
         <img className="Header-Img" src={props.imgLink} alt="Heading" />
         <h5 className="card-title">{props.cityName}</h5>
         <p className="card-text"> {props.cityText}</p>
-        <a href={props.url} className="btn btn-primary">
+        <a href={props.url} className="btn btn-primary my-card-btn">
           Read more..
         </a>
       </div>
