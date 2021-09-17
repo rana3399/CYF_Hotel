@@ -54,6 +54,14 @@ tr {
   color: #5b5757;
 }
 
+.color {
+  color: pink;
+}
+
+.blue {
+  background-color: rgb(206, 226, 248);
+}
+
 .results {
   padding-top: 15px;
 }
@@ -85,6 +93,14 @@ tr {
   background-color: rgb(104, 140, 218);
   position: absolute;
   top: 30rem;
+}
+
+.btn-container {
+}
+
+.my-order-btn {
+  background-color: #f36624;
+  margin: 0.5rem;
 }
 
 /* ------FOOTER-------- */

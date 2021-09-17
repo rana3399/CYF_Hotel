@@ -1,32 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
-const DaysBetweenDates = (a, b) => {
+const daysBetweenDates = (a, b) => {
   const firstMoment = moment(a);
   const secondMoment = moment(b);
 
   return firstMoment.diff(secondMoment, "days");
 };
 
-//console.log(moment());
+const TableRow = props => {
+  const [color, setColor] = useState();
 
-const TableRow = props => (
-  <tr>
-    <td scope="col">{props.booking.id}</td>
-    <td scope="col">{props.booking.title}</td>
-    <td scope="col">{props.booking.firstName}</td>
-    <td scope="col">{props.booking.surname}</td>
+  const highlight = () => {
+    setColor("blue");
 
-    <td scope="col">{props.booking.email}</td>
-    <td scope="col">{props.booking.roomId}</td>
-    <td scope="col">{props.booking.checkInDate}</td>
-    <td scope="col">{props.booking.checkOutDate}</td>
+    if (color === "blue") {
+      setColor("none");
+    }
+  };
 
-    <td scope="col">
-      {DaysBetweenDates(props.booking.checkOutDate, props.booking.checkInDate)}
-    </td>
-  </tr>
-);
+  return (
+    <tr className={color} onClick={highlight}>
+      <td scope="col">{props.booking.id}</td>
+      <td scope="col">{props.booking.title}</td>
+      <td scope="col">{props.booking.firstName}</td>
+      <td scope="col">{props.booking.surname}</td>
+      <td scope="col">{props.booking.email}</td>
+      <td scope="col">{props.booking.roomId}</td>
+      <td scope="col">{props.booking.checkInDate}</td>
+      <td scope="col">{props.booking.checkOutDate}</td>
+      <td scope="col">
+        {daysBetweenDates(
+          props.booking.checkOutDate,
+          props.booking.checkInDate
+        )}
+      </td>
+    </tr>
+  );
+};
 
 const SearchResults = props => (
   <table className="table">

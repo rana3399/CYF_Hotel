@@ -15,9 +15,14 @@ const Restaurant = () => {
 
 const RestaurantButton = props => {
   return (
-    <button onClick={props.orderCountBTN} className="btn btn-primary">
-      Add
-    </button>
+    <span className="btn-container">
+      <button
+        onClick={props.orderCountBTN}
+        className="btn btn-primary my-order-btn"
+      >
+        Add
+      </button>
+    </span>
   );
 };
 
