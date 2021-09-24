@@ -114,7 +114,8 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 #### 13. Render more orders
 
-**Instructions:** Pass a new prop named `orderType` to the `<Order />` component with the value "Pizzas". Then render the `orderType` prop instead of "Pizzas" in the `<Order />` component. Make sure that "Pizzas" is still displayed on the screen. In the `<ul>` list of the `<Restaurant />` component, render 2 others `<Order />` components but this time pass different values for the `orderType` prop: "Salads" and "Chocolate cake".
+**Instructions:** Pass a new prop named `orderType` to the `<Order />` component with the value "Pizzas". Then render the `orderType` prop instead of "Pizzas" in the `<Order />` component. Make sure that "Pizzas" is still displayed on the screen. In the `<ul>` list of the `<Restaurant />` component, render 2 others `<Order />` components but this time pass different values for the `orderType` prop: "Salads" and
+"Chocolate cake".
 
 **Test:** For each order, the number of items can be incremented independently. Verify that you are able to explain what is happening also props can contain strings and the way to use them is the same.
 
@@ -143,7 +144,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 **Hints:**
 
 - Replace `FakeBookings` in the bookings state and initialise it with `[]` (because we haven't fetched any results yet!)
-- After calling the `fetch()` function  within `useEffect()` method ', use `.then()` to handle the response. Try looking at your Pokemon app that you worked on in class for an example
+- After calling the `fetch()` function within `useEffect()` method ', use `.then()` to handle the response. Try looking at your Pokemon app that you worked on in class for an example
 - When the response comes back, use `setBookings` within `useEffect()` method to update the results
 
 **Test:** Verify the customers data are still displayed correctly in the table.
@@ -152,7 +153,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** In the following, we will implement the functionality to search for a customer name given the text typed into the customer name field. In the `src/Search.js` file, declare a new state variable named `searchInput` with the corresponding setter function `setSearchInput` (hint: use the React function `useState`). The initial value of the `searchInput` variable can be an empty string - `("")`. Add a `value` property to the `<input>` tag, that is set to the new `searchInput` state variable. Create a new function `handleSearchInput` taking an `event` parameter. This function should use the `setSearchInput` function to update the state variable `searchInput` with what the user typed in the input field. Finally, add a `onChange` prop to the `<input>` tag that is set to the function `handleSearchInput`. Use `console.log()` to output the value received in the `handleSearchInput` function.
 
-**Hint:** Use `event.target.value` to get the input value. Read more about - reacting on changes:` https://syllabus.migracode.org/course-content/react/week-2` to use it within `<input>` tag.
+**Hint:** Use `event.target.value` to get the input value. Read more about - reacting on changes:`https://syllabus.migracode.org/course-content/react/week-2` to use it within `<input>` tag.
 
 **Test:** In the developer console, check that everything you type in the search input is printed successively for each new character you enter.
 
@@ -168,7 +169,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** Still in the `<Bookings />` component, implement the `search` method. It must use the `searchVal` variable (that you just passed from the `<Search />` component) to **filter** the search results. The filter function should return bookings where `firstName` or `surname` match `searchVal`. Once filtered, use the `setBookings` function to update the results rendered in `<SearchResults />` component.
 
-**Hint:** pass `searchVal` as a parameter to the `search` method. 
+**Hint:** pass `searchVal` as a parameter to the `search` method.
 
 **Test:** Verify that when you enter an existing first name or surname and submit the form, the results are filtered accordingly in the customers table.
 
@@ -176,7 +177,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** Add a new column in the table of the `<SearchResults />` component and display a `<button>` for each row. The text of the button should read "Show profile". Then, create a new `<CustomerProfile />` component. This component should be rendered next to the table in the `<SearchResults />` component. This component should receive one prop `id`. When clicking on a "Show profile" button for a given row, the component `<CustomerProfile />` should display the text "Customer <ID> Profile", where <ID> is the id of the selected customer. Initially, the `<CustomerProfile />` component doesn't show anything.
 
-**Hint:** You need to record the selected customer id after clicking on a "Show profile" button, use `onClick` method. Pass `props` as a parameter to the `CustomerProfile`. In which component do you think this state should be defined? 
+**Hint:** You need to record the selected customer id after clicking on a "Show profile" button, use `onClick` method. Pass `props` as a parameter to the `CustomerProfile`. In which component do you think this state should be defined?
 
 **Test:** When first showing the page, no customer profile is displayed. When clicking the first "Show profile" button of the table, the text "Customer 1 profile" appears. When clicking the second "Show profile" button of the table, the text "Customer 2 profile" appears instead.
 
@@ -184,7 +185,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 **Instructions:** When a "Show profile" button is clicked in the table, fetch the corresponding customer profile from `https://cyf-react.glitch.me/customers/<ID>` in the `<CustomerProfile />` component. A customer profile should show the customer ID, their email, if they are VIP and their phone number in a list.
 
-**Hint:** You need to use `useEffect` and the correct dependency array and to fetch customers data from the API every time a "Show profile" button is clicked, render it accordingly. Check the status of the response and pass the result to the json. 
+**Hint:** You need to use `useEffect` and the correct dependency array and to fetch customers data from the API every time a "Show profile" button is clicked, render it accordingly. Check the status of the response and pass the result to the json.
 Inside the html part, add table for the results of fetch. Check the vip status of the user, using boolean.
 
 **Test:** When you click on a "Show profile" button in the table, the corresponding customer profile is loaded and rendered on the screen.

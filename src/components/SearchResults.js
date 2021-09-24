@@ -9,18 +9,18 @@ const daysBetweenDates = (a, b) => {
 };
 
 const TableRow = props => {
-  const [color, setColor] = useState();
+  const [selected, setSetSelected] = useState();
 
   const highlight = () => {
-    setColor("blue");
-
-    if (color === "blue") {
-      setColor("none");
-    }
+    setSetSelected(!selected);
+  };
+  const clicked = id => {
+    console.log(props.booking.id);
+    return <CustomerProfile id={id} />;
   };
 
   return (
-    <tr className={color} onClick={highlight}>
+    <tr className={selected ? "row-highlight" : undefined} onClick={highlight}>
       <td scope="col">{props.booking.id}</td>
       <td scope="col">{props.booking.title}</td>
       <td scope="col">{props.booking.firstName}</td>
@@ -34,6 +34,9 @@ const TableRow = props => {
           props.booking.checkOutDate,
           props.booking.checkInDate
         )}
+      </td>
+      <td scope="col">
+        <button onClick={clicked}>Show profile</button>
       </td>
     </tr>
   );
@@ -52,6 +55,7 @@ const SearchResults = props => (
         <th scope="col">Check in Date</th>
         <th scope="col">Check Out Date</th>
         <th scope="col">Nights</th>
+        <th scope="col">Display</th>
       </tr>
     </thead>
     <tbody>
@@ -61,5 +65,9 @@ const SearchResults = props => (
     </tbody>
   </table>
 );
+
+const CustomerProfile = () => {
+  return <h2>Customer profile</h2>;
+};
 
 export default SearchResults;
