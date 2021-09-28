@@ -1,36 +1,39 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-import FakeBookings from "../data/fakeBookings.json";
+// import FakeBookings from "../data/fakeBookings.json";
+import CustomerProfile from "./CustomerProfile.js";
 
 const Bookings = () => {
-  const [bookings, setBookings] = useState(FakeBookings);
+  const [bookings, setBookings] = useState([]);
+  const [searchVal, setSearchVal] = useState("");
+  const [customerProfileId, setCustomerProfileId] = useState();
+  //const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    //console.log("useeffect test ");
     fetch("https://cyf-react.glitch.me")
       .then(res => res.json())
-      .then(
-        data => {
-          //console.log((data));
-          setBookings(data);
-        },
-        [bookings]
-      );
-  });
-
-  const search = searchVal => {
-    bookings.filter(booking => {
-      let filter = booking.firstName == searchVal;
-      setBookings(filter);
-    });
-  };
+      .then(data => {
+        const bookings = searchVal
+          ? data.filter(
+              value =>
+                value.firstName === searchVal || value.surname === searchVal
+            )
+          : data;
+        setBookings(bookings);
+      });
+  }, [searchVal]);
 
   return (
     <div className="App-content">
       <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
+        <Search search={setSearchVal} />
+        <SearchResults
+          results={bookings}
+          onShowCustomerProfile={setCustomerProfileId}
+        />
+
+        <CustomerProfile id={customerProfileId} />
       </div>
     </div>
   );
