@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/footer.js";
-//import SearchResults from "./components/SearchResults";
+import NewBookingForm from "./NewBookingForm";
 import Restaurant from "./components/Restaurant";
 //import CustomerProfile from "./components/CustomerProfile";
 
@@ -16,6 +16,7 @@ const App = () => {
       <TouristInfoCards />
       <Bookings />
       <Restaurant />
+      <NewBookingForm />
       <Footer />
     </div>
   );
