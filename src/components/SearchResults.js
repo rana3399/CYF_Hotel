@@ -37,7 +37,7 @@ const TableRow = props => {
         )}
       </td>
       <td scope="col">
-        <button onClick={() => props.setShowProfile(props.booking.id)}>
+        <button onClick={() => props.profile(props.booking.id)}>
           Show Profile
         </button>
       </td>
@@ -68,7 +68,7 @@ const SearchResults = props => {
           <TableRow
             key={index}
             booking={booking}
-            setShowProfile={val => props.onShowCustomerProfile(val)}
+            profile={val => props.onShowCustomerProfile(val)}
           />
         ))}
       </tbody>
