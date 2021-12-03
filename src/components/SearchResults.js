@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import CustomerProfile from "./CustomerProfile";
+import NewBookingForm from "./NewBookingForm.js";
 
 const daysBetweenDates = (a, b) => {
   const firstMoment = moment(a);
@@ -30,6 +30,7 @@ const TableRow = props => {
       <td scope="col">{props.booking.roomId}</td>
       <td scope="col">{props.booking.checkInDate}</td>
       <td scope="col">{props.booking.checkOutDate}</td>
+      <td scope="col" />
       <td scope="col">
         {daysBetweenDates(
           props.booking.checkOutDate,
@@ -72,8 +73,21 @@ const SearchResults = props => {
           />
         ))}
       </tbody>
+      <NewBookingForm />
     </table>
   );
 };
 
 export default SearchResults;
+
+// -------------------------------
+// const newBookingInfo = event => {
+//   console.log(event.target.value);
+//   setBooking(event.target.value);
+// };
+
+// const handleSubmit = e => {
+//   e.preventDefault();
+// setBooking(event.target.value);
+//   alert(`The name you entered was: ${input}`);
+// };

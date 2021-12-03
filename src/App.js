@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/footer.js";
-import NewBookingForm from "./NewBookingForm";
+import NewBookingForm from "./components/NewBookingForm";
 import Restaurant from "./components/Restaurant";
 //import CustomerProfile from "./components/CustomerProfile";
 
