@@ -85,14 +85,16 @@ const Bookings = () => {
         {/* // --------NEW BOOKING component------------ */}
 
         {customerProfileId && <CustomerProfile id={customerProfileId} />}
-        <NewBookingForm
-          newBookName={event => setNewName(event.target.value)}
-          newBookLastName={event => setLastName(event.target.value)}
-          newEmail={event => setEmail(event.target.value)}
-          newCheckIn={event => setCheckIn(event.target.value)}
-          newCheckOut={event => setCheckOut(event.target.value)}
-          handleSubmit={handleSubmit}
-        />
+        <div className="booking-form">
+          <NewBookingForm
+            newBookName={event => setNewName(event.target.value)}
+            newBookLastName={event => setLastName(event.target.value)}
+            newEmail={event => setEmail(event.target.value)}
+            newCheckIn={event => setCheckIn(event.target.value)}
+            newCheckOut={event => setCheckOut(event.target.value)}
+            handleSubmit={handleSubmit}
+          />
+        </div>
       </div>
     </div>
   );

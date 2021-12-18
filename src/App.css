@@ -39,6 +39,8 @@
 .App-content {
   padding-top: 20px;
   font-size: large;
+  background-color: rgb(27, 62, 85);
+  color: black;
 }
 
 @keyframes App-logo-spin {
@@ -54,7 +56,8 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #1d1c1c;
+  font-weight: bolder;
 }
 
 .color {
@@ -62,7 +65,7 @@ tr {
 }
 
 .row-highlight {
-  background-color: rgb(206, 226, 248);
+  background-color: rgb(79, 87, 95);
 }
 
 .results {
