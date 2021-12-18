@@ -2,9 +2,7 @@ import React from "react";
 import Heading from "./components/Heading";
 import TouristInfoCards from "./components/TouristInfoCards";
 import Footer from "./components/footer.js";
-import NewBookingForm from "./components/NewBookingForm";
-import Restaurant from "./components/Restaurant";
-//import CustomerProfile from "./components/CustomerProfile";
+//import Restaurant from "./components/Restaurant";
 
 import Bookings from "./components/Bookings";
 import "./App.css";
@@ -15,8 +13,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
-      <Restaurant />
-      <NewBookingForm />
+      {/* <Restaurant /> */}
       <Footer />
     </div>
   );

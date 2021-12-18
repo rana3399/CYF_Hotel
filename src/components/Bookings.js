@@ -21,33 +21,18 @@ const Bookings = () => {
   // -------------------------------
   console.log(bookings);
 
-  const newBookName = event => {
-    console.log(event.target.value);
-    setNewName(event.target.value);
-  };
-
-  const newBookLastName = event => {
-    setLastName(event.target.value);
-  };
-
-  const newEmail = event => {
-    setEmail(event.target.value);
-  };
-
-  const newCheckIn = event => {
-    setCheckIn(event.target.value);
-  };
-
-  const newCheckOut = event => {
-    setCheckOut(event.target.value);
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
+
+    let num = 5;
+    let sum = ++num;
+    console.log(sum);
 
     setBookings([
       ...bookings,
       {
+        id: sum,
+        title: "Mr",
         firstName: newName,
         surname: lastName,
         email: email,
@@ -56,6 +41,8 @@ const Bookings = () => {
       }
     ]);
   };
+
+  console.log(bookings);
 
   useEffect(() => {
     setIsLoading(true);
@@ -96,15 +83,16 @@ const Bookings = () => {
         )}
 
         {/* // --------NEW BOOKING component------------ */}
+
+        {customerProfileId && <CustomerProfile id={customerProfileId} />}
         <NewBookingForm
-          newBookName={newBookName}
-          newBookLastName={newBookLastName}
-          newEmail={newEmail}
-          newCheckIn={newCheckIn}
-          newCheckOut={newCheckOut}
+          newBookName={event => setNewName(event.target.value)}
+          newBookLastName={event => setLastName(event.target.value)}
+          newEmail={event => setEmail(event.target.value)}
+          newCheckIn={event => setCheckIn(event.target.value)}
+          newCheckOut={event => setCheckOut(event.target.value)}
           handleSubmit={handleSubmit}
         />
-        {customerProfileId && <CustomerProfile id={customerProfileId} />}
       </div>
     </div>
   );
