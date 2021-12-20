@@ -69,31 +69,33 @@ const Bookings = () => {
   }, [searchVal]);
 
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={setSearchVal} />
-        {error && <p>{error}</p>}
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <SearchResults
-            results={bookings}
-            onShowCustomerProfile={setCustomerProfileId}
-          />
-        )}
+    <div className="App-content container">
+      <div className="row justify-content-center">
+        <div className="col-12 col-lg-10 col-md-10">
+          <Search search={setSearchVal} />
+          {error && <p>{error}</p>}
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <SearchResults
+              results={bookings}
+              onShowCustomerProfile={setCustomerProfileId}
+            />
+          )}
 
-        {/* // --------NEW BOOKING component------------ */}
+          {/* // --------NEW BOOKING component------------ */}
 
-        {customerProfileId && <CustomerProfile id={customerProfileId} />}
-        <div className="booking-form">
-          <NewBookingForm
-            newBookName={event => setNewName(event.target.value)}
-            newBookLastName={event => setLastName(event.target.value)}
-            newEmail={event => setEmail(event.target.value)}
-            newCheckIn={event => setCheckIn(event.target.value)}
-            newCheckOut={event => setCheckOut(event.target.value)}
-            handleSubmit={handleSubmit}
-          />
+          {customerProfileId && <CustomerProfile id={customerProfileId} />}
+          <div className="booking-form">
+            <NewBookingForm
+              newBookName={event => setNewName(event.target.value)}
+              newBookLastName={event => setLastName(event.target.value)}
+              newEmail={event => setEmail(event.target.value)}
+              newCheckIn={event => setCheckIn(event.target.value)}
+              newCheckOut={event => setCheckOut(event.target.value)}
+              handleSubmit={handleSubmit}
+            />
+          </div>
         </div>
       </div>
     </div>

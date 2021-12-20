@@ -19,24 +19,21 @@ const Search = props => {
       <div className="page-header">
         <h4 className="text-left">Search Bookings</h4>
       </div>
-      <div className="row search-wrapper">
-        <div className="col">
-          <form onSubmit={handleSubmit} className="form-group search-box">
-            <label htmlFor="customerName">Customer name</label>
-            <div className="search-row">
-              <input
-                onChange={handleSearchInput}
-                value={searchInput}
-                type="text"
-                id="customerName"
-                className="form-control"
-                placeholder="Customer name"
-              />
-              <SearchButton />
-            </div>
-          </form>
+
+      <form onSubmit={handleSubmit} className="form-group search-box">
+        <label htmlFor="customerName">Customer name</label>
+        <div className="search-row">
+          <input
+            onChange={handleSearchInput}
+            value={searchInput}
+            type="text"
+            id="customerName"
+            className="form-control"
+            placeholder="Customer name"
+          />
+          <SearchButton />
         </div>
-      </div>
+      </form>
     </div>
   );
 };

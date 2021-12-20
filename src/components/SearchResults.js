@@ -30,7 +30,7 @@ const TableRow = props => {
       <td scope="col">{props.booking.roomId}</td>
       <td scope="col">{props.booking.checkInDate}</td>
       <td scope="col">{props.booking.checkOutDate}</td>
-      <td scope="col" />
+
       <td scope="col">
         {daysBetweenDates(
           props.booking.checkOutDate,
@@ -38,7 +38,10 @@ const TableRow = props => {
         )}
       </td>
       <td scope="col">
-        <button onClick={() => props.profile(props.booking.id)}>
+        <button
+          className="btn  btn-outline-primary btn-sm"
+          onClick={() => props.profile(props.booking.id)}
+        >
           Show Profile
         </button>
       </td>
@@ -48,33 +51,35 @@ const TableRow = props => {
 
 const SearchResults = props => {
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room Id</th>
-          <th scope="col">Check in Date</th>
-          <th scope="col">Check Out Date</th>
-          <th scope="col">Nights</th>
-          <th scope="col">Display</th>
-          <th scope="col" />
-        </tr>
-      </thead>
-      <tbody>
-        {props.results.map((booking, index) => (
-          <TableRow
-            key={index}
-            booking={booking}
-            profile={val => props.onShowCustomerProfile(val)}
-          />
-        ))}
-      </tbody>
-      <NewBookingForm />
-    </table>
+    <div className="card card-table shadow-sm p-3 my-5">
+      <table className=" table ">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Room Id</th>
+            <th scope="col">Check in Date</th>
+            <th scope="col">Check Out Date</th>
+            <th scope="col">Nights</th>
+            <th scope="col">Display</th>
+            <th scope="col" />
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map((booking, index) => (
+            <TableRow
+              key={index}
+              booking={booking}
+              profile={val => props.onShowCustomerProfile(val)}
+            />
+          ))}
+        </tbody>
+        <NewBookingForm />
+      </table>
+    </div>
   );
 };
 

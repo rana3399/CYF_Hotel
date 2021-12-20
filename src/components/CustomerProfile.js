@@ -17,13 +17,22 @@ const CustomerProfile = props => {
   }
 
   return (
-    <ul>
-      <li> ID {customerProfileData.id} </li>
-      <li> Email {customerProfileData.email}</li>
-      {customerProfileData.vip ? (
-        <li> VIP Customer Phone Number{customerProfileData.phoneNumber}</li>
-      ) : null}
-    </ul>
+    <>
+      {customerProfileData && (
+        <div className="border border-success m-4 p-2 text-light">
+          <ul>
+            <li> ID {customerProfileData.id} </li>
+            <li> Email {customerProfileData.email}</li>
+            {customerProfileData.vip ? (
+              <li>
+                {" "}
+                VIP Customer Phone Number{customerProfileData.phoneNumber}
+              </li>
+            ) : null}
+          </ul>
+        </div>
+      )}
+    </>
   );
 };
 

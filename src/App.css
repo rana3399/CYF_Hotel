@@ -3,8 +3,11 @@
 }
 
 .App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
   height: 60px;
+  background-color: whitesmoke;
+  width: 11rem;
+  border-radius: 1rem;
+  padding: 1.2rem;
 }
 
 .logo-img {
@@ -16,9 +19,9 @@
 
 .App-header {
   background-color: rgb(28, 27, 27);
-  height: 80px;
+  height: 100px;
   padding: 20px;
-  color: white;
+  color: black;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
@@ -37,8 +40,9 @@
 }
 
 .App-content {
+  max-width: 100%;
   padding-top: 20px;
-  font-size: large;
+  font-size: small;
   background-color: rgb(27, 62, 85);
   color: black;
 }
@@ -72,33 +76,33 @@ tr {
   padding-top: 15px;
 }
 
-.cards-container {
-  width: 100vw;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.card {
-  width: 25rem;
-  height: 35rem;
-  margin: 1rem;
+.tour_card {
+  min-height: 35rem !important;
   box-shadow: 5px 5px 15px 5px grey;
 }
-
-.card-Img {
-  width: 300px;
-  height: 270px;
+.card-table {
+  overflow-x: auto;
 }
 
-.card-body {
+/* .card-Img {
+  width: 300px;
+  height: 270px;
+} */
+
+/* .card-body {
   position: relative;
+} */
+.card_button {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+}
+.card_item {
+  min-height: 200px;
 }
 .my-card-btn {
   background-color: rgb(104, 140, 218);
-  position: absolute;
-  top: 30rem;
 }
 
 .btn-container {
@@ -108,6 +112,17 @@ tr {
   background-color: #f36624;
   margin: 0.5rem;
 }
+
+/* ----Table----- */
+/* 
+.table-main-container{
+  background-color: rgb(18, 94, 47);
+  width: 100%;
+}
+.my-table{
+  background-color: rgb(129, 51, 51);
+  width: 90%;
+} */
 
 /* ------FOOTER-------- */
 .footer {
@@ -119,6 +134,8 @@ tr {
   align-items: center;
 }
 
-.footerUL {
-  list-style: none;
+@media only screen and (max-width: 600px) {
+  .table-main-container {
+    overflow-x: auto;
+  }
 }

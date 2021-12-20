@@ -53,7 +53,7 @@ const NewBookingForm = props => {
         placeholder="check-in-date"
       />
 
-      <input type="submit" />
+      <button className="btn btn-success m-3">Submit</button>
     </form>
   );
 };
